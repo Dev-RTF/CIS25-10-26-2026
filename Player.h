@@ -1,3 +1,4 @@
+#pragma once // this replaces all that #ifndef PLAYER_H #define PLAYER_H #endif stuff
 #include "Room.h"
 
 // A Player class holds the player's position. Its move member function takes a key and the room, and moves the player only if the space in that direction isn't a wall.
@@ -7,5 +8,5 @@ class Player {
         int x;
         int y;
     public:
-        bool move(char key, Room* room) // key: like wasd
+        bool move(char key, Room* room); // key: like wasd
 };

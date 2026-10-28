@@ -4,11 +4,12 @@
 using namespace std;
 
 Room::Room(int x, int y) {
-    this->map = new char[x][y];
-    this->height = y;
+    
     this->width = x;
+    this->height = y;
+    this->map = new char*[x];
     for (int outerCounter = 0; outerCounter < y; outerCounter++) {
-        // this->map[outerCounter] = new char[x];
+        this->map[outerCounter] = new char[x];
         
         for (int innerCounter = 0; innerCounter < x; innerCounter++) {
             if (outerCounter == 0 || outerCounter == (y - 1) || innerCounter == 0 || innerCounter == (x - 1)) {
