@@ -22,19 +22,19 @@ bool Player::move(char direction, Room* room) {
             return true;
         }
     }
-    else if (direction = 'a') {
+    else if (direction == 'a') {
         if (room->canMove(this->x - 1, this->y)) {
             this->x -= 1;
             return true;
         }
     }
-    else if (direction = 's') {
+    else if (direction == 's') {
         if (room->canMove(this->x, this->y + 1)) {
             this->y += 1;
             return true;
         }
     }
-    else if (direction = 'd') {
+    else if (direction == 'd') {
         if (room->canMove(this->x + 1, this->y)) {
             this->x += 1;
             return true;
@@ -43,3 +43,6 @@ bool Player::move(char direction, Room* room) {
 
     return false;
 }
+
+int Player::getX() { return this->x; }
+int Player::getY() { return this->y; }

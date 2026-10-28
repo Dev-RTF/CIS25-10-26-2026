@@ -10,7 +10,11 @@ class Player {
         int x;
         int y;
     public:
-    Player(); 
-    ~Player(); // A class that allocates memory should have a destructor to deallocate it all.    
-    bool move(char direction, Room* room);
+        Player(); 
+        ~Player(); // A class that allocates memory should have a destructor to deallocate it all.    
+        bool move(char direction, Room* room);
+
+        int getX();
+        int getY();
+
 };
