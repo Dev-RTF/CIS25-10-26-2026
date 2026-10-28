@@ -10,16 +10,20 @@
 // A Room class holds the map. The map's size isn't known until the program runs, so the Room allocates the map with new and releases it in its destructor.
 // The Room can draw itself, with the @ at the player's position.
 
+class Player; // a forward declaration: "There will be a class called player used, I'm defining it later." Player depends on Room type, Room depends on Player type. Forward declarations just lets you use them as long as there aren't other issues.
+
 class Room {
     private:
-        // Player* player;
+        Player* player;
         int width;
         int height;
-        char** map;
+        char** map; // 2D array aka an array of arrays or an array of pointers to other arrays.
+        // A char* would be an array of characters. A char** would be an array of pointers to arrays of characters.
         
-        // TODO: what type should the map be? probably some kind of array type char
     public:
-        Room(int x, int y); // allocate the map
+        Room(int x, int y, Player* player); // allocate the map
         ~Room(); // deallocate the map
         void draw();
+        // char tileAt(int x, int y);
+        bool canMove(int x, int y);
 };

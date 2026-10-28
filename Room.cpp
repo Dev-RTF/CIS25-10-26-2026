@@ -3,11 +3,12 @@
 
 using namespace std;
 
-Room::Room(int x, int y) {
+Room::Room(int x, int y, Player* player) {
     
-    this->width = x;
+    this->player = player;
     this->height = y;
-    this->map = new char*[x];
+    this->width = x; // Whether there is a this-> or not doesn't really matter. It works either way. Using this-> is clearer, showing that it refers to a class instance variable.
+    this->map = new char*[y];
     for (int outerCounter = 0; outerCounter < y; outerCounter++) {
         this->map[outerCounter] = new char[x];
         
@@ -24,6 +25,13 @@ Room::Room(int x, int y) {
 
 Room::~Room() {
 
+}
+
+bool Room::canMove(int x, int y) {
+    if (map[y][x] != '#') {
+        return true;
+    }
+    return false;
 }
 
 void Room::draw() {

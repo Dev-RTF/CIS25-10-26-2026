@@ -8,11 +8,11 @@ int main() {
     // When the program starts, it asks the user how big the map should be: a number of rows and a number of columns.
     // w moves up, a left, s down, and d right. 
 
-    Room room(5, 10);
+    Room room(20, 10);
     room.draw();
     
-    // char** mapRows; // pointer to an address that contains characters; "a 2D array"; a pointer that holds an array, that array holds pointers too
-    // Player* player; // this is put on the heap, can be argued to be put on the stack
+    // char** mapRows; // Pointer to an address that contains characters. "a 2D array". A pointer that holds an array, that array holds pointers too.
+    // Player* player; // This is put on the heap, can be argued to be put on the stack.
     // Room* room;
 
     // bool isRunning = true;

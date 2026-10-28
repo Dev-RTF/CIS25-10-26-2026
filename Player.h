@@ -3,10 +3,14 @@
 
 // A Player class holds the player's position. Its move member function takes a key and the room, and moves the player only if the space in that direction isn't a wall.
 
+class Room;
+
 class Player {
     private:
         int x;
         int y;
     public:
-        bool move(char key, Room* room); // key: like wasd
+    Player(); 
+    ~Player(); // A class that allocates memory should have a destructor to deallocate it all.    
+    bool move(char direction, Room* room);
 };
