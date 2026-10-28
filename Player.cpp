@@ -12,9 +12,12 @@ Player::~Player() {
 
 // Return true if player moved, false if not.
 bool Player::move(char direction, Room* room) {
+
+
     // Take in a direction, check which direction it is, check if player can move there in the room, 
     // then if they can, change the player's x and y.
 
+    // TODO: after player confirms their move, do item handling for the new position
     if (direction == 'w') {
         // Check if there's anything blocking us at the position we'd move to
         if (room->canMove(this->x, this->y - 1)) {

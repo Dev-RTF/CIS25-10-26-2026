@@ -5,16 +5,21 @@
 
 class Room;
 
+// TODO: The Player owns an Inventory. After a move, it takes anything lying on its new space and adds it to the inventory.
 class Player {
     private:
         int x;
         int y;
+        Room* room;
+
     public:
         Player(); 
         ~Player(); // A class that allocates memory should have a destructor to deallocate it all.    
-        bool move(char direction, Room* room);
+        bool move(char direction, Room* room); // TODO: remove room from here
 
         int getX();
         int getY();
+
+        // TODO: a way to associate a room with a player
 
 };

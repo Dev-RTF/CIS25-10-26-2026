@@ -12,6 +12,7 @@
 
 class Player; // a forward declaration: "There will be a class called player used, I'm defining it later." Player depends on Room type, Room depends on Player type. Forward declarations just lets you use them as long as there aren't other issues.
 
+// TODO: A thing picked up from the map has its letter as its id.
 class Room {
     private:
         Player* player;
@@ -21,6 +22,8 @@ class Room {
         // A char* would be an array of characters. A char** would be an array of pointers to arrays of characters.
         
     public:
+
+        // TODO: placeItem leaves a thing on an open space, and takeItem takes the thing at a position off the map and returns its letter, or 0 if nothing is there.
         Room(int x, int y, Player* player); // allocate the map
         ~Room(); // deallocate the map
         void draw();
